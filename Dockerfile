@@ -15,7 +15,6 @@ FROM base
 
 WORKDIR /app
 
-COPY build ./
 RUN npm install serve -g
 
-ENTRYPOINT [ "serve", "-s", "build"]
+ENTRYPOINT [ "serve", "-s", "/app/build"]

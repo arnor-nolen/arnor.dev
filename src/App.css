@@ -1,20 +1,121 @@
-.App {
-  text-align: center;
-  font-family: Bellota;
+:root {
+  --text-color: white;
+  --font-family: Bellota;
+  --background-color: #263d4f;
+  --accent-color1: #8cb598;
+  --accent-color2: #ca965d;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.aws-btn {
+  --button-default-height: 48px;
+  --button-default-font-size: 14px;
+  --button-default-border-radius: 6px;
+  --button-horizontal-padding: 20px;
+  --button-raise-level: 5px;
+  --button-hover-pressure: 2;
+  --transform-speed: 0.185s;
+  --button-primary-color: #475472;
+  --button-primary-color-dark: #2a3143;
+  --button-primary-color-light: #d4d9e4;
+  --button-primary-color-hover: #424e6a;
+  --button-primary-border: none;
+  --button-secondary-color: #fffc6c;
+  --button-secondary-color-dark: #b9b500;
+  --button-secondary-color-light: #6c6a00;
+  --button-secondary-color-hover: #fffb3e;
+  --button-secondary-border: none;
+  --button-anchor-color: #f3c8ad;
+  --button-anchor-color-dark: #734922;
+  --button-anchor-color-light: #4c3016;
+  --button-anchor-color-hover: #f1bfa0;
+  --button-anchor-border: 1px solid #8c633c;
+}
+
+a:link,
+a:visited {
+  color: var(--accent-color1);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color2);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--accent-color2);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.title {
+  font-size: 48px;
+  align-self: center;
+  font-weight: bold;
+}
+
+.App {
+  text-align: center;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: calc(10px + 2vmin);
 }
 
 .App-header {
-  background-color: #30343c;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-areas:
+    "pic name"
+    "pic desc"
+    "pic cta";
+  gap: 20px;
+}
+.Author-name {
+  font-size: 48px;
+  align-self: end;
+  justify-self: start;
+  grid-area: name;
+}
+.Author-desc {
+  font-size: 48px;
+  align-self: start;
+  justify-self: start;
+  grid-area: desc;
+}
+.Author-pic {
+  justify-self: end;
+  width: 20vw;
+  grid-area: pic;
+}
+.Author-project-link {
+  justify-self: start;
+  align-self: start;
+  grid-area: cta;
+}
+
+.Projects {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 5fr 1fr;
+}
+
+.Projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Project-cell {
+  padding: 1rem;
+  display: grid;
+  align-content: center;
+  gap: 20px;
+}
+
+.Project-name {
+  font-weight: bold;
 }

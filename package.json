@@ -1,14 +1,19 @@
 {
   "name": "arnor.dev",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.3.19",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "graphql": "^15.5.0",
+    "graphql.macro": "^1.4.2",
     "react": "^16.13.1",
+    "react-awesome-button": "^6.5.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "^4.0.3",
+    "react-scroll": "^1.8.2"
   },
   "scripts": {
     "start": "react-scripts start",

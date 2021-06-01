@@ -1,0 +1,21 @@
+query q1 {
+  githubInfo {
+    login
+    name
+    avatarUrl
+    bio
+    company
+    pinnedItems {
+      nodes {
+        name
+        description
+        createdAt
+        primaryLanguage {
+          name
+          color
+        }
+        url
+      }
+    }
+  }
+}

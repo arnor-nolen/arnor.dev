@@ -4,6 +4,7 @@
   --background-color: #263d4f;
   --accent-color1: #8cb598;
   --accent-color2: #ca965d;
+  --border-color: grey;
 }
 
 .aws-btn {
@@ -56,60 +57,112 @@ a:active {
   font-weight: bold;
 }
 
+body {
+  background-color: var(--background-color);
+  width: calc(100%);
+}
+
 .App {
   text-align: center;
   font-family: var(--font-family);
-  background-color: var(--background-color);
   color: var(--text-color);
-  font-size: calc(10px + 2vmin);
+  font-size: 30px;
 }
 
 .App-header {
-  min-height: 100vh;
+  grid-template-areas:
+    "pic"
+    "name"
+    "desc"
+    "cta";
+}
+
+.App-header {
   display: grid;
+  min-height: 100vh;
   align-content: center;
   justify-content: center;
-  grid-template-areas:
-    "pic name"
-    "pic desc"
-    "pic cta";
   gap: 20px;
+  padding: 20px;
 }
 .Author-name {
+  color: var(--accent-color1);
+  align-self: center;
+  text-align: center;
+  justify-self: center;
   font-size: 48px;
-  align-self: end;
-  justify-self: start;
   grid-area: name;
 }
 .Author-desc {
-  font-size: 48px;
-  align-self: start;
-  justify-self: start;
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+  font-size: 40px;
   grid-area: desc;
 }
 .Author-pic {
-  justify-self: end;
-  width: 20vw;
+  width: 300px;
+  align-self: center;
+  text-align: center;
+  justify-self: center;
   grid-area: pic;
+  margin: -30px -50px;
 }
 .Author-project-link {
-  justify-self: start;
-  align-self: start;
-  grid-area: cta;
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+  padding: 10px 0px;
+}
+
+@media (min-width: 600px) {
+  .App-header {
+    grid-template-areas:
+      "pic name"
+      "pic desc"
+      "pic cta";
+  }
+  .Author-name {
+    text-align: left;
+    justify-self: start;
+  }
+  .Author-pic {
+    justify-self: end;
+  }
+  .Author-project-link {
+    justify-self: start;
+    grid-area: cta;
+  }
+  .Author-desc {
+    text-align: left;
+    justify-self: start;
+  }
 }
 
 .Projects {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
-  grid-template-rows: 2fr 5fr 1fr;
+  grid-template-rows: 150px 5fr;
+}
+
+.Projects-grid {
+  --repeat: auto-fit;
+}
+@media (min-width: calc((300px + 40px) * 3)) {
+  .Projects-grid {
+    --repeat: 3;
+  }
 }
 
 .Projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  grid-template-columns: repeat(var(--repeat, auto-fit), minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .Project-cell {
+  border: 1px dashed var(--border-color);
   padding: 1rem;
   display: grid;
   align-content: center;

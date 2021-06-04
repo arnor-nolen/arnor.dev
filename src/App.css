@@ -66,7 +66,7 @@ body {
   text-align: center;
   font-family: var(--font-family);
   color: var(--text-color);
-  font-size: 30px;
+  font-size: calc(10px + 1vw);
 }
 
 .App-header {
@@ -148,7 +148,7 @@ body {
 .Projects-grid {
   --repeat: auto-fit;
 }
-@media (min-width: calc((300px + 40px) * 3)) {
+@media (min-width: calc((200px + 40px) * 3)) {
   .Projects-grid {
     --repeat: 3;
   }
@@ -157,7 +157,7 @@ body {
 .Projects-grid {
   display: grid;
   padding: 20px;
-  grid-template-columns: repeat(var(--repeat, auto-fit), minmax(300px, 1fr));
+  grid-template-columns: repeat(var(--repeat, auto-fit), minmax(200px, 1fr));
   gap: 20px;
 }
 
@@ -171,4 +171,17 @@ body {
 
 .Project-name {
   font-weight: bold;
+}
+
+.Contact {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 150px 5fr;
+  padding: 20px;
+}
+.Contact-desc {
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+  /* font-size: 24px; */
 }

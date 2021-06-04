@@ -59,6 +59,16 @@ function App() {
               ))}
         </div>
       </section>
+      <section className="Contact" id="contact-me">
+        <div className="title">Contact me</div>
+        <div className="Contact-desc">
+          If you're interested in my work or have any offers, you can contact me
+          at{" "}
+          <a href="mailto:andrey1gorbulin@gmail.com">
+            andrey1gorbulin@gmail.com
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

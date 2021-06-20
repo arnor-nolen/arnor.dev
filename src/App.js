@@ -1,11 +1,13 @@
 import React from "react";
 import { ReactComponent as Logo } from "./logo.svg";
-import "react-awesome-button/dist/styles.css";
+import "react-awesome-button/dist/themes/theme-c137.css";
+import "antd/dist/antd.dark.css";
 import "./App.css";
 import { useQuery } from "@apollo/client";
 import { loader } from "graphql.macro";
 import { AwesomeButton } from "react-awesome-button";
 import { Link } from "react-scroll";
+import ContactForm from "./components/ContactForm";
 
 const query = loader("./queries/fetchProjects.graphql");
 
@@ -26,16 +28,30 @@ function App() {
         <div className="Author-name">Arnor Nolen</div>
         <div className="Author-desc">software engineer from Finland</div>
         <div className="Author-project-link">
-          <Link
-            to="my-projects"
-            spy={true}
-            smooth="easeInOutCubic"
-            duration={500}
-          >
-            <AwesomeButton type="primary" size="large">
-              Go to my projects
-            </AwesomeButton>
-          </Link>
+          <div>
+            <Link
+              to="my-projects"
+              spy={true}
+              smooth="easeInOutCubic"
+              duration={500}
+            >
+              <AwesomeButton type="primary" size="large">
+                Go to my projects
+              </AwesomeButton>
+            </Link>
+          </div>
+          <div>
+            <Link
+              to="contact-me"
+              spy={true}
+              smooth="easeInOutCubic"
+              duration={500}
+            >
+              <AwesomeButton type="secondary" size="large">
+                Contact me
+              </AwesomeButton>
+            </Link>
+          </div>
         </div>
       </header>
       <section className="Projects" id="my-projects">
@@ -62,11 +78,16 @@ function App() {
       <section className="Contact" id="contact-me">
         <div className="title">Contact me</div>
         <div className="Contact-desc">
-          If you're interested in my work or have any offers, you can contact me
-          at{" "}
-          <a href="mailto:andrey1gorbulin@gmail.com">
-            andrey1gorbulin@gmail.com
-          </a>
+          {/* <div
+            style={{
+              margin: "40px 0px",
+              textAlign: "center",
+            }}
+          >
+            If you're interested in my work, you can contact me using the form
+            below.
+          </div> */}
+          <ContactForm />
         </div>
       </section>
     </div>

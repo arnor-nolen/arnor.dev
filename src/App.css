@@ -1,35 +1,10 @@
 :root {
   --text-color: white;
   --font-family: Bellota;
-  --background-color: #263d4f;
+  --background-color: #0e2536;
   --accent-color1: #8cb598;
   --accent-color2: #ca965d;
   --border-color: grey;
-}
-
-.aws-btn {
-  --button-default-height: 48px;
-  --button-default-font-size: 14px;
-  --button-default-border-radius: 6px;
-  --button-horizontal-padding: 20px;
-  --button-raise-level: 5px;
-  --button-hover-pressure: 2;
-  --transform-speed: 0.185s;
-  --button-primary-color: #475472;
-  --button-primary-color-dark: #2a3143;
-  --button-primary-color-light: #d4d9e4;
-  --button-primary-color-hover: #424e6a;
-  --button-primary-border: none;
-  --button-secondary-color: #fffc6c;
-  --button-secondary-color-dark: #b9b500;
-  --button-secondary-color-light: #6c6a00;
-  --button-secondary-color-hover: #fffb3e;
-  --button-secondary-border: none;
-  --button-anchor-color: #f3c8ad;
-  --button-anchor-color-dark: #734922;
-  --button-anchor-color-light: #4c3016;
-  --button-anchor-color-hover: #f1bfa0;
-  --button-anchor-border: 1px solid #8c633c;
 }
 
 a:link,
@@ -58,8 +33,8 @@ a:active {
 }
 
 body {
-  background-color: var(--background-color);
-  width: calc(100%);
+  background-color: var(--background-color) !important;
+  width: calc(100%) !important;
 }
 
 .App {
@@ -114,44 +89,15 @@ body {
   justify-self: center;
   padding: 10px 0px;
 }
-
-@media (min-width: 600px) {
-  .App-header {
-    grid-template-areas:
-      "pic name"
-      "pic desc"
-      "pic cta";
-  }
-  .Author-name {
-    text-align: left;
-    justify-self: start;
-  }
-  .Author-pic {
-    justify-self: end;
-  }
-  .Author-project-link {
-    justify-self: start;
-    grid-area: cta;
-  }
-  .Author-desc {
-    text-align: left;
-    justify-self: start;
-  }
+.Author-project-link > div {
+  margin: 10px;
 }
-
-.Projects {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 150px 5fr;
-}
-
-.Projects-grid {
-  --repeat: auto-fit;
-}
-@media (min-width: calc((200px + 40px) * 3)) {
-  .Projects-grid {
-    --repeat: 3;
-  }
+.Contact-desc {
+  align-self: center;
+  text-align: left;
+  justify-self: center;
+  width: 100%;
+  font-size: 20px;
 }
 
 .Projects-grid {
@@ -179,9 +125,70 @@ body {
   grid-template-rows: 150px 5fr;
   padding: 20px;
 }
-.Contact-desc {
-  align-self: center;
+
+.antd-form-label {
+  font-size: 20px;
+}
+.antd-form-tail {
+  padding-top: 20px !important;
+}
+
+@media (min-width: 700px) {
+  .App-header {
+    grid-template-areas:
+      "pic name"
+      "pic desc"
+      "pic cta";
+  }
+  .Author-name {
+    text-align: left;
+    justify-self: start;
+  }
+  .Author-pic {
+    justify-self: end;
+  }
+  .Author-project-link {
+    justify-self: start;
+    grid-area: cta;
+    display: flex;
+  }
+  .Author-project-link > div {
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+  .Author-desc {
+    text-align: left;
+    justify-self: start;
+  }
+}
+@media (min-width: 1000px) {
+  .Contact-desc {
+    width: 70%;
+  }
+}
+
+.Projects {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 150px 5fr;
+}
+
+.Projects-grid {
+  --repeat: auto-fit;
+}
+@media (min-width: calc((200px + 40px) * 3)) {
+  .Projects-grid {
+    --repeat: 3;
+  }
+}
+
+.Contact-form-message {
   text-align: center;
-  justify-self: center;
-  /* font-size: 24px; */
+  /* font-size: calc(10px + 1vw); */
+}
+.Contact-form-spinner {
+  width: 50px;
+  height: 40px;
+  margin: auto;
+  transform: translate(-50%, -50%);
 }

@@ -1,0 +1,9 @@
+mutation sendEmailAPI(
+  $name: String!
+  $email: EmailAddress!
+  $message: String!
+) {
+  sendEmail(name: $name, email: $email, message: $message) {
+    message
+  }
+}

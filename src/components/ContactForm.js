@@ -31,7 +31,6 @@ const ContactForm = () => {
 
   const onFinish = (values) => {
     sendEmail({ variables: values }).then(() => {
-      console.log(data);
       setEmailSent(true);
     });
   };

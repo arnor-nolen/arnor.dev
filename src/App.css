@@ -2,11 +2,13 @@
   --text-color: white;
   --font-family: Bellota;
   --background-color: #0e2536;
+  --background-menu-color: #031a2b;
   --accent-color1: #8cb598;
   --accent-color2: #ca965d;
   --border-color: grey;
 }
 
+a,
 a:link,
 a:visited {
   color: var(--accent-color1);
@@ -15,7 +17,7 @@ a:visited {
 }
 
 a:hover {
-  color: var(--accent-color2);
+  color: var(--accent-color2) !important;
   background-color: transparent;
   text-decoration: underline;
 }
@@ -24,6 +26,10 @@ a:active {
   color: var(--accent-color2);
   background-color: transparent;
   text-decoration: underline;
+}
+
+.ant-menu-title-content > a {
+  text-decoration: none;
 }
 
 .title {
@@ -42,6 +48,19 @@ body {
   font-family: var(--font-family);
   color: var(--text-color);
   font-size: calc(10px + 1vw);
+  display: flex;
+}
+
+.main-content {
+  width: 100%;
+  /* margin-left: 256px; */
+}
+
+.top-menu {
+  background-color: var(--background-menu-color) !important;
+}
+.ant-menu-item-active > span > a {
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 .App-header {
@@ -50,16 +69,14 @@ body {
     "name"
     "desc"
     "cta";
-}
-
-.App-header {
   display: grid;
-  min-height: 100vh;
   align-content: center;
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  min-height: 100vh;
 }
+
 .Author-name {
   color: var(--accent-color1);
   align-self: center;
@@ -72,7 +89,7 @@ body {
   align-self: center;
   text-align: center;
   justify-self: center;
-  font-size: 40px;
+  font-size: 32px;
   grid-area: desc;
 }
 .Author-pic {
@@ -133,7 +150,38 @@ body {
   padding-top: 20px !important;
 }
 
+.hamburger {
+  visibility: visible;
+  margin: 20px;
+  background-color: var(--background-color);
+  height: auto;
+  width: auto;
+  position: fixed;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background-color) !important;
+  font-size: 24px;
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+}
+
+.menu > div {
+  margin: 25px 20px;
+}
+
 @media (min-width: 700px) {
+  .App-header,
+  .Projects,
+  .Contact {
+    min-height: calc(-46px + 100vh);
+  }
+  .top-menu {
+    justify-content: center;
+  }
   .App-header {
     grid-template-areas:
       "pic name"
@@ -159,6 +207,15 @@ body {
   .Author-desc {
     text-align: left;
     justify-self: start;
+  }
+  .menu {
+    visibility: visible;
+    height: auto;
+    width: auto;
+  }
+  .hamburger {
+    visibility: hidden;
+    position: fixed;
   }
 }
 @media (min-width: 1000px) {

@@ -26,7 +26,7 @@ const tailLayout = {
 };
 
 const ContactForm = () => {
-  const [sendEmail, { loading, data }] = useMutation(mutation);
+  const [sendEmail, { loading }] = useMutation(mutation);
   const [emailSent, setEmailSent] = useState(false);
 
   const onFinish = (values) => {

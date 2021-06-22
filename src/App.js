@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactComponent as Logo } from "./logo.svg";
 import "react-awesome-button/dist/themes/theme-c137.css";
 import "antd/dist/antd.dark.css";
 import "./App.css";
@@ -9,6 +8,7 @@ import { AwesomeButton } from "react-awesome-button";
 import { Link } from "react-scroll";
 import ContactForm from "./components/ContactForm";
 import { Affix, Menu } from "antd";
+import Logo from "./components/logo3d";
 
 const query = loader("./queries/fetchProjects.graphql");
 
@@ -72,7 +72,7 @@ function App() {
           </Menu>
         </Affix>
         <header className="App-header" id="header">
-          <Logo className="Author-pic" />
+          <Logo />
           <div className="Author-name">Arnor Nolen</div>
           <div className="Author-desc">software engineer from Finland</div>
           <div className="Author-project-link">

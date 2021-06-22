@@ -53,7 +53,6 @@ body {
 
 .main-content {
   width: 100%;
-  /* margin-left: 256px; */
 }
 
 .top-menu {
@@ -93,14 +92,14 @@ body {
   grid-area: desc;
 }
 .Author-pic {
-  width: 300px;
   align-self: center;
   text-align: center;
   justify-self: center;
   grid-area: pic;
-  margin: -30px -50px;
-  -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
-  filter: invert(100%);
+  grid-row: span 1;
+  margin: -10px -10px;
+  min-width: 350px;
+  min-height: 177px;
 }
 .Author-project-link {
   align-self: center;
@@ -195,6 +194,7 @@ body {
     justify-self: start;
   }
   .Author-pic {
+    grid-row: span 3;
     justify-self: end;
   }
   .Author-project-link {
